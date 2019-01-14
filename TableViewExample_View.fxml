@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@grey_theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TableViewExample_ViewController">
+   <children>
+      <Button layoutX="714.0" layoutY="561.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" text="Go back" />
+      <VBox layoutX="40.0" layoutY="20.0" prefHeight="318.0" prefWidth="612.0" spacing="10.0">
+         <children>
+            <Label text="TableView Object">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableView" onMouseClicked="#userClickedOnTable" prefHeight="173.0" prefWidth="412.0">
+              <columns>
+                <TableColumn fx:id="firstNameColumn" onEditCommit="#changeFirstNameCellEvent" prefWidth="224.0" text="First Name" />
+                <TableColumn fx:id="lastNameColumn" minWidth="1.0" onEditCommit="#changeLastNameCellEvent" prefWidth="259.0" text="Last Name" />
+                  <TableColumn fx:id="birthdayColumn" minWidth="0.0" prefWidth="94.0" text="Birthday" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="612.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="firstNameTextField" prefWidth="224.0" text="First Name" />
+                  <TextField fx:id="lastNameTextField" prefWidth="259.0" text="Last Name" />
+                  <DatePicker fx:id="birthdayDatePicker" prefWidth="94.0" promptText="Birthday" />
+               </children>
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="612.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newPersonButtonPushed" prefWidth="224.0" text="Add New Person" />
+                  <Button mnemonicParsing="false" onAction="#deleteButtonPushed" prefWidth="224.0" text="Delete Person(s)" />
+                  <Button fx:id="detailedPersonViewButton" mnemonicParsing="false" onAction="#changeSceneToDetailedPersonView" prefHeight="25.0" prefWidth="141.0" text="Detailed Person View" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
